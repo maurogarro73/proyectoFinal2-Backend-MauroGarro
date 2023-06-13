@@ -38,7 +38,7 @@ export class CartService {
       if (!cart) {
         throw new Error('Cart not found');
       }
-      const existingProduct = cart.products.find((product) => product._id.toString() === productId);
+      const existingProduct = cart.products.find((product) => product._id._id.toString() === productId.toString());
       if (existingProduct) {
         existingProduct.quantity += 1;
       } else {
