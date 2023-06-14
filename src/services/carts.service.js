@@ -52,18 +52,14 @@ export class CartService {
   }
 
   /* ver como hacerlo */
-  async updateCart(cid, productsAdd) {
-    const cart = await CartModel.findById(cid);
-    if (!cart) {
-      throw new Error('Cart not found');
+  async updateCart(cid, products) {
+    try {
+      const updatedCart = await CartModel.findByIdAndUpdate(cid, { products }, { new: true });
+      console.log(updatedCart);
+      return updatedCart;
+    } catch (error) {
+      throw new Error('Error updating cart in database');
     }
-    cart.products = [];
-    // TODO: [{ _id: 1, quantity: 2 },{ _id: 2, quantity: 2 }]
-    productsAdd.forEach(async (item) => {
-      const product = await ProductModel.findOne({ _id: item.productId });
-      cart.products.push({ product: product._id, quantity: 1 });
-    });
-    return await cart.save();
   }
 
   async removeProductFromCart(cartId, productId) {
