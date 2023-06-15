@@ -54,7 +54,7 @@ export class CartService {
   /* ver como hacerlo */
   async updateCart(cid, products) {
     try {
-      const updatedCart = await CartModel.findByIdAndUpdate(cid, { products }, { new: true });
+      const updatedCart = await CartModel.findByIdAndUpdate(cid, { products, quantity }, { new: true });
       console.log(updatedCart);
       return updatedCart;
     } catch (error) {
