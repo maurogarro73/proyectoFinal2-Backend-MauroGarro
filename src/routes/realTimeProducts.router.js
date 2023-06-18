@@ -1,4 +1,3 @@
-//@ts-check
 import express from 'express';
 import ProductManager from '../DAO/fileSystem/productManager.js';
 

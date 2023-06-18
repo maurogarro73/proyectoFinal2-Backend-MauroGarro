@@ -1,6 +1,6 @@
-# Desafío 6 - Segunda entrega del proyecto final
+# Desafío 7 - Segunda entrega del proyecto final
 
-Este repositorio contiene el código fuente para el Desafío 4, titulado "Motores de plantillas + Websocket". En este desafío, se utiliza Handlebars como motor de plantillas y Websocket para cargar productos en tiempo real.
+Este repositorio contiene el código fuente para el Desafío 7, titulado "Segunda Pre Entrega del Proyecto Final". En este desafío, se utiliza Handlebars como motor de plantillas.
 
 ## Requisitos previos
 
@@ -11,7 +11,7 @@ Este repositorio contiene el código fuente para el Desafío 4, titulado "Motore
 1. Clona este repositorio en tu máquina local utilizando el siguiente comando:
 
 ```
-   $ git clone https://github.com/maurogarro73/desafio4-Websocket-MauroGarro
+   $ git clone https://github.com/maurogarro73/proyectoFinal2-Backend-MauroGarro
 ```
 
 2. Instala las dependencias del proyecto ejecutando el siguiente comando:
@@ -28,13 +28,36 @@ Este repositorio contiene el código fuente para el Desafío 4, titulado "Motore
    $ npm run dev
 ```
 
-2. Abre tu navegador web y visita `http://localhost:8080/realtimeproducts` o `http://localhost:8080/home` para ver la aplicación en funcionamiento.
+2. Abre tu navegador web y visita `http://localhost:8080/api/products` o `http://localhost:8080/api/carts` para un uso como backend.
+
+3. Abre tu navegador web y visita `http://localhost:8080/products`, `http://localhost:8080/carts`, `http://localhost:8080/chat o para un uso como frontend.
+
+## Objetivos generales
+
+- Utilizar Mongo como sistema de persistencia principal.
+- Definir todos los endpoints necesarios para trabajar con productos y carritos.
+
+## Objetivos específicos
+
+- Profesionalizar las consultas de productos, implementando filtros, paginación y ordenamientos avanzados.
+- Mejorar la gestión de carritos utilizando los últimos conceptos vistos.
 
 ## Uso
 
-La aplicación utiliza Handlebars como motor de plantillas para renderizar la interfaz de usuario. Además, se utiliza Websocket para cargar los productos en tiempo real.
+- Para utilizar el método GET / con los nuevos parámetros de consulta, puedes realizar una solicitud GET con las siguientes características:
 
-Cuando accedas a la aplicación en tu navegador, podrás ver una lista de productos. Si otro usuario agrega, modifica o elimina un producto, la lista se actualizará automáticamente en todos los clientes conectados gracias a Websocket.
+```
+   $ http://localhost:8080/api/products/?limit=<valor>
 
-Link para Postman
-[Postman](https://documenter.getpostman.com/view/27127581/2s93sdZBu3)
+   $ http://localhost:8080/api/products/?page=<valor>
+
+   $ http://localhost:8080/api/products/?sort=<asc|desc>
+
+   $ http://localhost:8080/api/products/?query=<valor>
+```
+
+- Todas en forma separa o combinadas.
+
+## Postman
+
+Link a [Postman](https://documenter.getpostman.com/view/27127581/2s93sdZBu3)

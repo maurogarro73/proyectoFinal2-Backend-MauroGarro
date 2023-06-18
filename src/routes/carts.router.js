@@ -48,7 +48,6 @@ cartsRouter.put('/:cid/products/:pid', async (req, res) => {
   }
 });
 
-/* Continuar corrigiendo este */
 cartsRouter.put('/:cid', async (req, res) => {
   try {
     const { cid } = req.params;

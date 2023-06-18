@@ -51,7 +51,6 @@ export class CartService {
     }
   }
 
-  /* ver como hacerlo */
   async updateCart(cid, products) {
     try {
       const updatedCart = await CartModel.findByIdAndUpdate(cid, { products, quantity }, { new: true });
